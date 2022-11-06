@@ -1,0 +1,81 @@
+body{
+  display:block;
+  justify-content:center;
+  padding: 3rem 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+  color: white;
+  background: rgb(220, 20, 60);
+  background-image: url("iStock-507009337-171002.png");
+  background-size: cover; 
+  background-position: center;
+}
+.main{
+display: block;
+}
+section .upper{
+  align-self: center;
+
+}
+.upper h1{
+  color: white;
+  font-family: sans-serif;
+  display: block;
+  font-weight: bold;
+  font-size: 50px;
+  padding-left: 80px;
+  text-align: center;
+}
+.upper p{
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  padding-left: 80px;
+  font-size: 30px;
+}
+.form{
+  margin-top: 26px;
+  margin-bottom: 25px;
+  padding-top: 16px;
+  padding-right: 16px;
+}
+form{
+  text-align: center;
+  padding-top: 16px;
+  margin-top: 16px;
+}
+input{
+  padding-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 250px;
+
+}
+ .warning{
+  visibility: hidden;
+ }
+ .forget{
+  color: blue;
+  text-decoration: underline;
+  text-align: center;
+  padding-left: 150px;
+ }
+ button{
+  margin: 4px 2px;
+  padding: 15px 62px;
+  border-radius: 20px;
+  background-color: blue;
+ }
+
+input::placeholder{
+  text-transform: uppercase;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.sign{
+  text-decoration: underline;
+  color: blue;
+}

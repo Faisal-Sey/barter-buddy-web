@@ -1,0 +1,59 @@
+{% extends './base.html' %} {% load static %} {% block title %}
+<title>Login page</title>
+{% endblock %} {% block content %}
+<main>
+  <!-- hero section -->
+  <section class="hero">
+    <h1 class="hero__title">Welcome back to barter-buddy</h1>
+    <p class="hero__desc">
+      Continue to connect and share ideas to grow the community
+    </p>
+  </section>
+  <!-- hero section ends -->
+  <!-- sign-up section -->
+  <section class="sign-up">
+    <form class="sign-up__form" method="POST">
+      {% csrf_token %}
+      <div class="form__input">
+        <input
+          class=""
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+          required
+        />
+        <span class="warning-icon">!</span>
+        <p class="warning">Last name cannot be empty</p>
+      </div>
+      <div class="form__input">
+        <input
+          class=""
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          required
+        />
+        <span class="warning-icon">!</span>
+        <p class="warning">Password cannot be empty</p>
+      </div>
+      <input class="submit-btn" type="submit" value="sign in" />
+      <span id="account">
+        Don't have an account? 
+        <a href="{% url 'register' %}" id="sign-in-link"> Sign up</a>
+      </span>
+      <div class="forgotten-pass-sect">
+        <a href="{% url 'forgotten_password' %}" id="forget-password">Forget Password</a>
+      </div>
+    </form>
+    <!-- form ends -->
+    <div id="snackbar">{{ error }}</div>
+  </section>
+  <!-- sign-up ends -->
+</main>
+
+<footer></footer>
+<script src="{% static 'js/register.js' %}"></script>
+
+{% endblock %}

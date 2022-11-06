@@ -1,0 +1,108 @@
+ body{
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    font-family:"Poppins", sans-serif;
+    font-size: 1em;
+    color: white;
+    background: rgb(220, 20, 60);
+    background-image: url("iStock-507009337-171002.png");
+    background-size: cover; 
+    background-position: center;
+}
+.main{
+
+}
+section .upper{
+    align-items: center;
+
+}
+ .upper h1{
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    font-size: 50px;
+    padding-left: 60px;
+
+ }
+ .upper p{
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    padding-left: 30px;
+    font-size: 30px;
+ }
+ .form{
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+ }
+ form{
+    text-align: center;
+    padding-top: 16px;
+    margin-top: 16px;
+ }
+input{
+    padding-top: 15px;
+    margin-top: 10px;
+    width: 250px;
+ }
+ .input{
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+ }
+ .warning{
+    display: none;
+ }
+ 
+::-webkit-input-placeholder { /* Edge */
+    color: gray;
+    text-transform: uppercase;
+    text-align: left;
+    padding-left: 15px;
+    padding-bottom: 50px;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer */
+    color: gray;
+    text-transform: uppercase;
+  }
+  button{
+   background-color: blue;
+  }
+  
+  ::placeholder {
+    color: gray;
+    text-transform: uppercase;
+
+  }
+  .sign{
+    text-decoration: underline;
+    color: blue;
+  }
+  .describe{
+   color: blue;
+   padding-left: 70px;
+   font-weight: bold;
+  }
+  .apply{
+   color: blue;
+   padding-left: 240px;
+   margin: 15px;
+   font-weight: bold;
+  }
+  button{
+  margin: 4px 2px;
+  padding: 15px 62px;
+  border-radius: 20px;
+  background-color: blue;
+ }

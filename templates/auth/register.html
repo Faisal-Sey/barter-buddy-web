@@ -1,0 +1,120 @@
+{% extends './base.html' %} 
+{% load static %} 
+
+{% block title %}
+  <title>Create An account</title>
+{% endblock %} 
+
+
+{% block content %}
+  <main>
+    <!-- hero section -->
+    <section class="hero">
+      <h1 class="hero__title">Meet, Connect, and Share Ideas</h1>
+      <p class="hero__desc">
+        Yes, with <b>barter-buddy</b> you can have a personal buddy to learn
+        together
+      </p>
+    </section>
+    <!-- hero section ends -->
+    <!-- sign-up section -->
+    <section class="sign-up">
+      <form action="{% url 'register' %}" class="sign-up__form" method="POST">
+        {% csrf_token %}
+        <div class="form__input">
+          <input
+            class=""
+            type="text"
+            name="fname"
+            id="fname"
+            placeholder="First Name"
+            value=""
+            required
+          />
+          <span class="warning-icon">!</span>
+          <p class="warning">First name cannot be empty</p>
+        </div>
+
+        <div class="form__input">
+          <input
+            class=""
+            type="text"
+            name="lname"
+            id="lname"
+            placeholder="Last Name"
+            value=""
+            required
+          />
+          <span class="warning-icon">!</span>
+          <p class="warning">Last name cannot be empty</p>
+        </div>
+        <div class="form__input">
+          <input
+            class=""
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+            value=""
+            required
+          />
+          <span class="warning-icon">!</span>
+          <p class="warning">Last name cannot be empty</p>
+        </div>
+        <div class="form__input">
+          <input
+            class=""
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email Address"
+            value=""
+            required
+          />
+          <span class="warning-icon">!</span>
+          <p class="warning">Looks like this is not an email</p>
+        </div>
+
+        <div class="form__input">
+          <input
+            class=""
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            value=""
+            required
+          />
+          <span class="warning-icon">!</span>
+          <p class="warning">Password cannot be empty</p>
+        </div>
+        <div class="form__input">
+          <input
+            class=""
+            type="password"
+            name="c_password"
+            id="c_password"
+            placeholder="Confirm Password"
+            value=""
+            required
+          />
+          <span class="warning-icon">!</span>
+          <p class="warning">Password cannot be empty</p>
+        </div>
+        <input class="submit-btn" type="submit" value="sign in" />
+        <span id="account">
+          <span>Already have account?</span>
+          <a href="{% url 'login' %}" id="sign-in-link">Sign in</a>
+        </span>
+      </form>
+      <!-- form ends -->
+
+    </section>
+    <!-- sign-up ends -->
+  </main>
+
+  <footer></footer>
+  <script src="{% static 'js/boostrap.min.js' %}"></script>
+  <script src="{% static 'js/register.js' %}"></script>
+
+{% endblock %}

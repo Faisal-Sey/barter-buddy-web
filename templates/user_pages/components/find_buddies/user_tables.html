@@ -1,0 +1,135 @@
+<div class="flex flex-col mt-6">
+  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+      <div
+        class="overflow-hidden border-b border-gray-200 rounded-md shadow-md"
+      >
+        <table class="min-w-full overflow-x-scroll divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Name
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Age
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Skills
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Location
+              </th>
+              <th scope="col" class="relative px-6 py-3">
+                <span class="sr-only">Edit</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            {% for neighbour in neighbours %}
+            <tr class="transition-all hover:bg-gray-100 hover:shadow-lg">
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0 w-10 h-10">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="{{ neighbour.picture.url }}"
+                      alt=""
+                    />
+                  </div>
+                  <div class="ml-4">
+                    <div class="text-sm font-medium text-gray-900">
+                      {{ neighbour.user.first_name}} {{neighbour.user.last_name}}
+                    </div>
+                    <div class="text-sm text-gray-500">
+                      {{ neighbour.user.email }}
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">{{ neighbour.get_age }}</div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span
+                  class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full"
+                >
+                  {{ neighbour.get_skills }}
+                </span>
+              </td>
+              <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                {{ neighbour.location }}
+              </td>
+              <td
+                class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
+              >
+                <a
+                  href="#"
+                  class="text-indigo-600 hover:text-indigo-900"
+                  data-bs-toggle="modal"
+                  data-bs-target="#viewModal"
+                  >View</a
+                >
+              </td>
+              <td
+                class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
+              >
+                <a href="#" class="text-indigo-600 hover:text-indigo-900"
+                  >Connect</a
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="modal fade"
+        id="viewModal"
+        tabindex="-1"
+        aria-labelledby="viewModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Profile
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">{{ neighbour.user.email }}</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

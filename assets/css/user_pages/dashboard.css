@@ -1,0 +1,48 @@
+#footer {
+  background-color: hsl(154, 59%, 51%);
+  color: white;
+  font-size: 1.4rem;
+}
+#sidebar {
+  background-color: hsl(154, 59%, 51%);
+  color: white;
+  border-bottom: 2px solid white;
+}
+#sidebar li a:hover {
+  color: black;
+}
+#sidebar-header {
+  background-color: hsl(154, 59%, 51%);
+  color: white;
+  border-bottom: 2px solid white;
+}
+#Sidebar-links-text {
+  font-size: 1.3rem;
+}
+#side-logout:hover {
+  background-color: hsl(154, 59%, 51%);
+  color: white;
+}
+#Total-Users:hover {
+  box-shadow: 3px 3px hsl(154, 59%, 51%);
+}
+#dasbord-main {
+  border-bottom: solid hsl(154, 59%, 51%);
+}
+#Import-data-card:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px hsl(154, 59%, 51%);
+}
+#Card-header {
+  border-bottom: solid hsl(154, 59%, 51%);
+}
+#Desktop-search input {
+  color: white;
+}
+#Desktop-search-box {
+  background-color: hsl(154, 59%, 51%);
+  color: white;
+}
+#Desktop-search-box::placeholder {
+  color: white;
+}

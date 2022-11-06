@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <title>Document</title>
+</head>
+<body>
+      <main>
+      <!-- hero section -->
+      <section class="hero">
+        <h1 class="hero__title" id="hero__desc-reg-title">Welcome back to barter-buddy</h1>
+        <p class="hero__desc" id="hero__desc-pass">
+          Continue to connect and share ideas to grow the community
+        </p>
+      </section>
+      <!-- hero section ends -->
+      <!-- sign-up section -->
+      <section class="sign-up">
+        <form class="sign-up__form" method="POST">
+          <div class="form__input">
+            <input
+              class=""
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+              required
+            />
+            <span class="warning-icon">!</span>
+            <p class="warning">Last name cannot be empty</p>
+          </div>
+          <div class="form__input">
+            <input
+              class=""
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <span class="warning-icon">!</span>
+            <p class="warning">Password cannot be empty</p>
+          </div>
+          <input class="submit-btn" type="submit" value="sign in" />
+          <span id="account">
+            Don't have an account? 
+            <a href="register.html" id="sign-in-link"> Sign up</a>
+          </span>
+          <div class="forgotten-pass-sect">
+            <a href="forget-password.html" id="forget-password">Forget Password</a>
+          </div>
+        </form>
+        <!-- form ends -->
+      </section>
+      <!-- sign-up ends -->
+      </main>
+      
+      <footer>
+      </footer>
+      <script src="register.js"></script>
+</body>
+</html>
