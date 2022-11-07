@@ -173,13 +173,12 @@ def account_settings(request, *args, **kwargs):
     if 'picture' in request.POST:
       old_image = Profile.objects.get(user=user)
       print(old_image.picture)
-      form = ImageForm(request.POST, request.FILES, instance=old_image)
-      if form.is_valid():
-        image_path = old_image.picture.path
-        if os.path.exists(image_path):
-          os.remove(image_path)
-        form.save()
-        return redirect("account_settings")
+      form = ImageForm(request.FILES, instance=old_image)
+      new_picture = request.FILES.get('profile_image')
+      old_image.picture = new_picture
+      print(old_image.picture)
+      old_image.save()
+      return redirect("account_settings")
   user = request.user
   name = user.first_name + ' ' + user.last_name
   try:
