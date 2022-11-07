@@ -2,7 +2,7 @@
 ![Amalitech](amalitech.jpeg)
 
 # Project Description
-A community based to connect buddies to share skills
+A community based software to connect buddies and share skills
 
 ## Tech Stack
 
@@ -11,16 +11,15 @@ A community based to connect buddies to share skills
 **Server:** Python
 
 ## Features
-1. Local Authentication | email and password
-2. OAuth 2.0 | Google, Facebook, Twitter
-3. File Upload management
-4. Payment management | Stripe, Mobile Money 
-5. Email Notification 
-6. Contact Form | mailgun, Sendgrid
+1. Local Authentication | username and password
+2. Email Notification | Reset Password
+3. Dashboard | Analytics
+4. Find Buddy | Form creation
+5. Email Notification | Reset Password
 
 
 # Preview
-- [projectname](https://projectname)
+- [BarterBuddy](https://barterbuddy.pythonanywhere.com/)
 
 This section should include any type of preview elements that would give an insight into what your 
 submission loks like. It can be GIFs, images, videos, or anything similar.
@@ -31,65 +30,54 @@ This section should cover how to set up and run the project locally.
 
 ## Prerequisites
 If running your submission requires any prerequisites, make sure to list them in this section.
-- Nodejs v14
-- Postgres
+- Python 3.10
 
 ## Install Project
 1. Clone the repository:
 ```sh
-git clone https://github.com/
+git clone https://github.com/Amali-Tech/Barter-buddy-backend.git
 ```
 2. Change directory
 ```sh
-cd my-project
+cd barter-buddy-backend
 ```
 3. Install dependencies
 ```sh
-npm install
+pip install -r requirements.txt
+```
+4. Setup database
+```sh
+python manage.py migrate
 ```
 4. Start server
 ```sh
-npm run start
+python manage.py runserver
 ```
 
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`API_KEY`
+`EMAIL_HOST_USER`
 
-`ANOTHER_API_KEY`
-
-`DB_NAME`
-
-# API Reference
-
-#### Get all items
-
-```http
-  GET /api/items
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
-#### Get item
-
-```http
-  GET /api/items/${id}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+`EMAIL_HOST_PASSWORD`
 
 
 ## Lessons Learned
 
 1. What did you learn while building this project? 
-2. What challenges did you face and how did you overcome them?
+Lesson learnt include;
+- Team work
+- Understanding APIs
+- Time Management
 
+2. What challenges did you face and how did you overcome them?
+- Meeting deadline
+- Hosting Issues 
+- Database Setup
 # Participants
-- [@CyrilBaah](https://www.github.com/CyrilBaah) | DevOps
+- [@faisal-issaka](https://www.github.com/faisal-issaka) | Team Lead - Backend Developer
+- [@iamBilal99](https://github.com/iamBilal99) | Backend-developer
+- [@josh0033](https://github.com/josh0033) | Frontend Developer
+- [@sweetieARKO](https://github.com/sweetieARKO) | Frontend Developer
 

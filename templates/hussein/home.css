@@ -4,7 +4,7 @@ html, body {
   }
   
   .header {
-    background-color:#333333;
+    background-color:hsl(154, 59%, 51%);
   width: 100%;
   position: fixed;
   z-index: 5;
@@ -16,15 +16,16 @@ html, body {
     padding: 0 10px;
    
   }
-  
+  #Barter-buddy-title{
+ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
   .jumbotron {
-    background: url("friends-learning-study-group_23-2149257223.webp");
+    background: url("home_bg.webp");
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
     height: 800px;
   }
-  
   .nav {
     margin: 0;
     padding: 20px 0;
@@ -39,7 +40,7 @@ html, body {
     color: #fff;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 15px;
     text-transform:uppercase;
     margin-left:10px;
     margin-right:10px;
@@ -132,10 +133,23 @@ html, body {
   #Study-buddy{
     font-size: 30px;
   }
+  #Books-access{
+    font-size: 30px;
+  }
   .clearfix {
     clear: both;
+  }.icons{
+display: flex;
+max-width: 100%;
+justify-content: center;
+align-items: center;
   }
-  
+  .icons img{
+border-radius: 50%;
+width: 50px;
+height: 50px;
+margin-left: 2px;
+  }
   .footer {
     background-color: #333;
     color: #fff;
@@ -146,6 +160,11 @@ html, body {
     font-family: 'Raleway', sans-serif;
     text-transform: uppercase;
     font-size: 11px;
+    text-align: center;
+  }
+  address{
+    text-align: center;
+    font-style: normal;
   }
   
   @media (max-width: 500px) {
@@ -157,4 +176,15 @@ html, body {
     .supporting .col {
       width: 100%;
     }
+    .col{
+      border-bottom: 1px solid rgb(129, 128, 128);
+  cursor: pointer;
+  border-radius: 8%;
+ cursor: pointer;
+      border-radius: 8%;
+     }
+     .icons img{
+      width: 30px;
+      height: 30px;
+     }
   }

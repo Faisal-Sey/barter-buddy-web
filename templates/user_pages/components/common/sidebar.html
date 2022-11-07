@@ -93,7 +93,7 @@
       </li>
       <li>
         <a
-          href="#"
+          href="{% url 'account_settings' %}"
           class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
           :class="{'justify-center': !isSidebarOpen}"
         >
@@ -124,7 +124,8 @@
     <button
       id="side-logout"
       class="flex items-center justify-center w-full px-4 py-2 space-x-1 font-medium tracking-wider uppercase bg-gray-100 border rounded-md focus:outline-none focus:ring"
-    >
+      type="reset" onclick=location.href='{% url "logout" %}'
+      >
       <span>
         <svg
           class="w-6 h-6"
