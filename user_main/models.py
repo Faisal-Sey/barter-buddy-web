@@ -19,11 +19,18 @@ class Profile(models.Model):
     return 21
     # return int((datetime.now(timezone.utc) - datetime(self.date_of_birth, )).days / 365.5)
   def get_skills(self):
-    three_skills = self.skills.split(",")[0:3]
-    return ','.join(three_skills)
+    try:
+        set_skill = self.skills.split(",")[0:3]
+        three_skills = set_skill
+        return ','.join(three_skills)
+    except:
+        return ""
 
   def get_skills_arr(self):
-    return self.skills.split(",")
+      try:
+        return self.skills.split(",")
+      except:
+          return []
 
   def to_json(self):
     res = {"id": self.pk, **model_to_dict(self)}
@@ -35,7 +42,7 @@ class Profile(models.Model):
     res["skills_arr"] = self.get_skills_arr()
     return res
 
-  
+
 class Connect(models.Model):
   user = models.ForeignKey(User, related_name='user_sending', on_delete=models.CASCADE)
   receiver = models.ForeignKey(User, related_name='user_receiving', on_delete=models.CASCADE)
@@ -47,4 +54,14 @@ class Connect(models.Model):
 
   def __str__(self) -> str:
     return self.user.first_name + "-" + self.receiver.first_name
+
+  def to_json(self):
+    res = {"id": self.id, **model_to_dict(self)}
+    res["profile"] = Profile.objects.get(user=self.receiver)
+    return res
+
+  def to_json_new(self):
+    res = {"id": self.id, **model_to_dict(self)}
+    return res
+
 

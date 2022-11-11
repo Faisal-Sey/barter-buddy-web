@@ -43,7 +43,7 @@ def register(request, *args, **kwargs):
 
     if c_password == password:
       user = User.objects.create_user(
-        username=username, 
+        username=username,
         email=email,
         password=password,
         first_name=fname,
@@ -63,7 +63,7 @@ def forgotten_password(request, *args, **kwargs):
     email = request.POST.get("email")
     try:
       message = "Hello <br> Please click the link below to reset password <br>"
-      message += f"<a href='http://127.0.0.1:8000/auth/verify_email/{email}'>Reset Password</a>"
+      message += f"<a href='https://barterbuddy.pythonanywhere.com/auth/verify_email/{email}'>Reset Password</a>"
       check_user = User.objects.get(email=email)
       if check_user is not None:
         send_mail(
@@ -71,7 +71,7 @@ def forgotten_password(request, *args, **kwargs):
           message="h",
           html_message= message,
           from_email=settings.EMAIL_HOST_USER,
-          recipient_list = [email], 
+          recipient_list = [email],
         )
     except Exception as e:
       print(e)
@@ -89,6 +89,7 @@ def verify_email(request, email):
   if request.method == 'POST':
     password = request.POST.get("password")
     c_new_password = request.POST.get("c_password")
+    print(password, c_new_password)
     if password == c_new_password:
       user = User.objects.get(email=email)
       user.set_password(password)
@@ -107,12 +108,16 @@ def verify_email(request, email):
   else:
     return redirect("login")
 
+def logout_user(request, *args, **kwargs):
+    logout(request)
+    return redirect("/login")
+
 
 def reset_password(request, email):
   # if request.method == 'POST':
   #   print("Yes")
   if email is not None:
       return redirect("/auth/reset_password.html")
-  
+
   else:
     return redirect("register")

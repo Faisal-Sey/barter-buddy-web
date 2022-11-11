@@ -1,6 +1,6 @@
 from django.urls import path, include
 
-from .views import signin, register, signout, forgotten_password, verify_email, reset_password
+from .views import signin, register, signout, forgotten_password, verify_email, reset_password, logout_user
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -10,9 +10,10 @@ urlpatterns = [
   path('logout', signout, name='logout'),
   path('forgotten_password', forgotten_password, name='forgotten_password'),
   path('verify_email/<str:email>', verify_email, name="verify_email"),
-  path('reset_password', reset_password, name='reset_password')
-] 
+  path('reset_password', reset_password, name='reset_password'),
+  path('logout', logout_user, name="logout")
+]
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

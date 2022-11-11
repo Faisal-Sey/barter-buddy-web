@@ -4,7 +4,207 @@
       <div
         class="overflow-hidden border-b border-gray-200 rounded-md shadow-md"
       >
+        {% if total_connects_received != 0 %}
+        <div class="mt-6 mb-3 text-xl">Connections received</div>
         <table id="myTable" class="min-w-full overflow-x-scroll divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr class="t_head">
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Name
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Age
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Skills
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Location
+              </th>
+              <th scope="col" class="relative px-6 py-3">
+                <span class="sr-only">Edit</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            {% for connect in connects_received %}
+            <tr class="transition-all hover:bg-gray-100 hover:shadow-lg">
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0 w-10 h-10">
+                    {% if connect.receiver.picture %}
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="{{ connect.receiver.picture.url }}"
+                      alt=""
+                    />
+                    {% else %}
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://avatars0.githubusercontent.com/u/57622665?s=460&u=8f581f4c4acd4c18c33a87b3e6476112325e8b38&v=4"
+                      alt=""
+                    />
+                    {% endif %}
+                  </div>
+                  <div class="ml-4">
+                    <div class="text-sm font-medium text-gray-900">
+                      {{ connect.receiver.first_name}}
+                      {{connect.receiver.last_name}}
+                    </div>
+                    <div class="text-sm text-gray-500">
+                      {{ connect.receiver.email }}
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">{{ connect.profile.get_age }}</div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span
+                  class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full"
+                >
+
+                </span>
+              </td>
+              <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                {{ connect.profile.location }}
+              </td>
+              <td
+                class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
+              >
+                <a
+                  href="#"
+                  class="text-indigo-600 hover:text-indigo-900"
+                  onClick="AcceptConnectionModal({{ connect.id }})"
+                  >Accept</a
+                >
+              </td>
+                <td
+                class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
+              >
+                <a
+                  href="#"
+                  class="text-indigo-600 hover:text-indigo-900"
+                  >Reject</a
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <div></div>
+        {% endif %}
+
+        {% if total_connects != 0 %}
+        <div class="mt-6 mb-3 text-xl">Connections sent</div>
+        <table id="myTable" class="min-w-full overflow-x-scroll divide-y divide-gray-200" style="margin-top: 30px;">
+          <thead class="bg-gray-50">
+            <tr class="t_head">
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Name
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Age
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Skills
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+              >
+                Location
+              </th>
+              <th scope="col" class="relative px-6 py-3">
+                <span class="sr-only">Edit</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            {% for connect in connects %}
+            <tr class="transition-all hover:bg-gray-100 hover:shadow-lg">
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0 w-10 h-10">
+                    {% if connect.receiver.picture %}
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="{{ connect.receiver.picture.url }}"
+                      alt=""
+                    />
+                    {% else %}
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://avatars0.githubusercontent.com/u/57622665?s=460&u=8f581f4c4acd4c18c33a87b3e6476112325e8b38&v=4"
+                      alt=""
+                    />
+                    {% endif %}
+                  </div>
+                  <div class="ml-4">
+                    <div class="text-sm font-medium text-gray-900">
+                      {{ connect.receiver.first_name}}
+                      {{connect.receiver.last_name}}
+                    </div>
+                    <div class="text-sm text-gray-500">
+                      {{ connect.receiver.email }}
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">{{ connect.profile.get_age }}</div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span
+                  class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full"
+                >
+
+                </span>
+              </td>
+              <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                {{ connect.profile.location }}
+              </td>
+              <td
+                class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
+              >
+                <a
+                  href="#"
+                  class="text-indigo-600 hover:text-indigo-900"
+                  >{{ connect.status }}</a
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <div></div>
+        {% endif %}
+      </div>
+        <table id="myTable" class="min-w-full overflow-x-scroll divide-y divide-gray-200" style="margin-top: 30px;">
           <thead class="bg-gray-50">
             <tr class="t_head">
               <th
@@ -42,11 +242,19 @@
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
                   <div class="flex-shrink-0 w-10 h-10">
+                    {% if neighbour.picture %}
                     <img
                       class="w-10 h-10 rounded-full"
-                      src="{{ neighbour.picture }}"
+                      src="{{ neighbour.picture.url }}"
                       alt=""
                     />
+                    {% else %}
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://avatars0.githubusercontent.com/u/57622665?s=460&u=8f581f4c4acd4c18c33a87b3e6476112325e8b38&v=4"
+                      alt=""
+                    />
+                    {% endif %}
                   </div>
                   <div class="ml-4">
                     <div class="text-sm font-medium text-gray-900">
@@ -66,7 +274,7 @@
                 <span
                   class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full"
                 >
-                  
+
                 </span>
               </td>
               <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
@@ -85,8 +293,8 @@
               <td
                 class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
               >
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   class="text-indigo-600 hover:text-indigo-900"
                   onClick="ConnectModal({{ neighbour.id }}, {{ neighbour.user.id }})"
                   >Connect</a
@@ -157,6 +365,67 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="acceptModal"
+        tabindex="-1"
+        aria-labelledby="viewModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Profile</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="modal_body_content">
+                <div style="">
+                  <img src="" alt="" />
+                </div>
+                <div class="details_row">
+                  <div>
+                    <h6>Skill Shared:</h6>
+                    <p id="skill_shared_accept">hy</p>
+                  </div>
+                  <div>
+                    <h6>Location:</h6>
+                    <p id="location_accept">man</p>
+                  </div>
+                </div>
+                <div class="details_row">
+                  <div>
+                    <h6>Date:</h6>
+                    <p id="date_accept"></p>
+                  </div>
+                  <div>
+                    <h6>Contact:</h6>
+                    <p id="contact_accept"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <input type="text" id="accept_id" hidden/>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button onClick={AcceptConnection()} class="btn btn-primary">
+                Accept
+              </button>
             </div>
           </div>
         </div>

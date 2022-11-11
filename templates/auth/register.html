@@ -1,9 +1,9 @@
-{% extends './base.html' %} 
-{% load static %} 
+{% extends './base.html' %}
+{% load static %}
 
 {% block title %}
   <title>Create An account</title>
-{% endblock %} 
+{% endblock %}
 
 
 {% block content %}
@@ -101,10 +101,10 @@
           <span class="warning-icon">!</span>
           <p class="warning">Password cannot be empty</p>
         </div>
-        <input class="submit-btn" type="submit" value="sign in" />
+        <input class="submit-btn" type="submit" value="sign up" />
         <span id="account">
           <span>Already have account?</span>
-          <a href="{% url 'login' %}" id="sign-in-link">Sign up</a>
+          <a href="{% url 'login' %}" id="sign-in-link">Sign in</a>
         </span>
       </form>
       <!-- form ends -->
