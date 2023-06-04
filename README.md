@@ -1,5 +1,3 @@
-# Amalitech Hackathon 2022 | README Guide
-![Amalitech](amalitech.jpeg)
 
 # Project Description
 A community based software to connect buddies and share skills
@@ -75,9 +73,4 @@ Lesson learnt include;
 - Meeting deadline
 - Hosting Issues 
 - Database Setup
-# Participants
-- [@faisal-issaka](https://www.github.com/faisal-issaka) | Team Lead - Backend Developer
-- [@iamBilal99](https://github.com/iamBilal99) | Backend-developer
-- [@josh0033](https://github.com/josh0033) | Frontend Developer
-- [@sweetieARKO](https://github.com/sweetieARKO) | Frontend Developer
 
